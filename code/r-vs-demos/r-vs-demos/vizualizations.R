@@ -1,9 +1,7 @@
-#There's two primary apis for graphics in R. ggplot2 and base (the build in plot)
-#This demo uses base because it's easier to read. 
-
+#There's two primary apis for graphics in R. ggplot2 and base graphics (the built in plotting library)
+#This demo uses base because it's easier. 
 
 #Let's get some data
-
 povertyDf = read.csv("./data/world_poverty_in_millions.csv")
 
 #lets make the dates into years
@@ -28,3 +26,17 @@ barplot(povertyDf$Value, names.arg = povertyDf$Year,
     main = "World Poverty in Millions",
     xlab = "Year", ylab = "People in Poverty (Millions)",
     ylim = c(0, 2000), col = "#00B01A")
+
+#let's try a line chart instead | type l = line chart
+plot(povertyDf$Year, povertyDf$Value, type = "l",
+    main = "World Poverty in Millions",
+    xlab = "Year", ylab = "People in Poverty (Millions)",
+    ylim = c(0, 2000), xlim = c(1980, 2013), col = "#00475E", lwd = 3)
+
+# we can save plots too | Supported formats include: svg(), pdf(), jpeg(), png()...
+png("data/Poverty_In_Millions.png", width = 800, height = 1000)
+barplot(povertyDf$Value, names.arg = povertyDf$Year,
+    main = "World Poverty in Millions",
+    xlab = "Year", ylab = "People in Poverty (Millions)",
+    ylim = c(0, 2000), col = "#00B01A")
+dev.off() #turns off the plot saving
