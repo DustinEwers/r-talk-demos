@@ -22,6 +22,10 @@ sort(vec)
 unique(vec)
 table(vec) # gets the count of each vector
 
+#basic math functions you'd expect in a statistical language
+max(vec)
+min(vec)
+sum(vec)
 
 # Matricies, multi dimensional arrays of the same type.
 mat = matrix(c(1:10), nrow = 5, ncol = 2) 
@@ -75,14 +79,3 @@ while (i > 0) {
 
 # apply is a map function. Usually used instead of a loop. 
 apply(mat, 1, mean)
-
-# R has lots of built in math, which shouldn't be surprising... 
-
-max(vec)
-min(vec)
-mean(vec)
-median(vec)
-sum(vec)
-
-var(vec) # variance
-sd(vec)  # standard deviation
