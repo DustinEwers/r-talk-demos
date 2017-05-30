@@ -47,7 +47,6 @@ df$x[1] #access an individual field
 ?iris
 #or use the help function
 help.search('weighted mean')
-help.search(package = 'ggplot')
 
 #importing data is easy. R supports many text formats
 povertyDf = read.csv("./data/world_poverty_in_millions.csv")

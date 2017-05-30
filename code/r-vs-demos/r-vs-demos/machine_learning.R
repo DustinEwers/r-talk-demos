@@ -3,7 +3,6 @@
 
 str(iris) # structure of the data
 
-
 ## K-Means Clustering
 
 #taking the build in iris data set and applying kmeans clustering to predict the species

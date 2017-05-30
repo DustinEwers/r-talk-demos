@@ -32,6 +32,3 @@ summary(model_fit)
 
 plot(mtcars$hp, mtcars$mpg)
 abline(model_fit) #adds a line to the plot
-
-#analysis of variance table
-anova(model_fit)
