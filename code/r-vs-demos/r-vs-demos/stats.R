@@ -13,6 +13,17 @@ var(mtcars$mpg) #variance
 #if you want a bunch of stuff at once
 summary(mtcars[1:4])
 
+
+#let's convert to something more readable
+carsDf = mtcars
+carsDf$cyl <- factor(carsDf$cyl, levels = c(4, 6, 8), labels = c("4cyl", "6cyl", "8cyl"))
+carsDf$am <- factor(carsDf$am, levels = c(0,1), labels = c("Automatic", "Manual"))
+
+# we can use the aggregate function to slice our data sets up
+aggregate(mpg ~ cyl, data = carsDf, mean) # Average MPG by Cyl
+aggregate(mpg ~ am, data = carsDf, mean) #Avgerage MPG by Transmission
+aggregate(mpg ~ cyl + am, data = carsDf, mean) # Average MPG by Transmission and Cyl
+
 #covariance
 cov(mtcars$mpg, mtcars$hp) #covariance
 cov(mtcars[1:4]) # covariance matrix
@@ -26,7 +37,6 @@ sample(faithful$eruptions, size = 5)
 
 #linear regression
 model_fit = lm(mtcars$mpg ~ mtcars$hp) #build a fitted linear model
-lm(formula = mtcars$mpg ~ mtcars$hp)
 
 summary(model_fit)
 

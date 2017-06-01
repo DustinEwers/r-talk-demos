@@ -76,5 +76,13 @@ while (i > 0) {
     i= i-1
 }
 
-# apply is a map function. Usually used instead of a loop. 
-apply(mat, 1, mean)
+# apply is a group of map function.
+apply(mat, 1, mean) # gets the mean of each row
+
+#apply comes in different flavors:
+
+lapply(vec, cube) # apply for lists and vectors
+sapply(vec, cube) # returns the value as a vector (easier to use than lapply)
+
+mapply(rep, 1:4, 4) # multivariate apply. Use this if you have a function with more than one parameter
+#this is equivilant to this: matrix(c(rep(1, 4), rep(2, 4), rep(3, 4), rep(4, 4)),4,4)
