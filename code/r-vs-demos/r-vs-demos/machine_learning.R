@@ -1,12 +1,13 @@
 
 #we'll be using the built in Iris dataset here
 
+head(iris)
 str(iris) # structure of the data
 
 ## K-Means Clustering
 
 #taking the build in iris data set and applying kmeans clustering to predict the species
-clusters = kmeans(x = iris[1:4], centers = 3, nstart = 10)
+clusters = kmeans(x = iris[1:4], centers = 3, nstart= 10)
 
 #checking to see how the matches work out
 table(x = clusters$cluster, y = iris$Species)
