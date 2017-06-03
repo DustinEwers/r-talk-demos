@@ -36,6 +36,8 @@ df = data.frame(x = c(1:4), y = c("col1", "col2"), z = c(2:5))
 dfm = data.frame(mat) # can make with a matrix
 df$x # access each column
 df$x[1] #access an individual field
+df[df$x > 2,] # SQL like selection of specific columns
+
 
 #Built In Values
 # TRUE / FALSE - boolean literals
@@ -53,7 +55,6 @@ povertyDf = read.csv("./data/world_poverty_in_millions.csv")
 
 #exporting is easy too.
 write.csv(povertyDf, "./data/export.csv")
-
 
 #functions are variables. they are defined like this
 cube = function(x) {
@@ -77,7 +78,7 @@ while (i > 0) {
 }
 
 # apply is a group of map function.
-apply(mat, 1, mean) # gets the mean of each row
+apply(mat, 1, mean) # gets the mean of each row (1 means row)
 
 #apply comes in different flavors:
 

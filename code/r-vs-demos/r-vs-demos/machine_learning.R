@@ -3,6 +3,7 @@
 
 head(iris)
 str(iris) # structure of the data
+summary(iris)
 
 ## K-Means Clustering
 
@@ -21,6 +22,7 @@ indexes = sample(x = 1:150, size = 100)
 training_set = iris[indexes,]
 testing_set = iris[-indexes,]
 
+library("rpart")
 tree_model = rpart(formula = Species ~ ., data=training_set)
 
 summary(tree_model)

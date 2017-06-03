@@ -6,7 +6,7 @@ povertyDf = read.csv("./data/world_poverty_in_millions.csv")
 
 #lets make the dates into years
 getYear = function(x) { as.numeric(format(as.Date(x), '%Y')) }
-povertyDf$Year = unlist(lapply(povertyDf$Date, getYear))
+povertyDf$Year = sapply(povertyDf$Date, getYear)
 
 #order the data by date asc
 povertyDf = povertyDf[order(povertyDf$Year, decreasing = FALSE),]

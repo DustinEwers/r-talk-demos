@@ -13,7 +13,6 @@ var(mtcars$mpg) #variance
 #if you want a bunch of stuff at once
 summary(mtcars[1:4])
 
-
 #let's convert to something more readable
 carsDf = mtcars
 carsDf$cyl <- factor(carsDf$cyl, levels = c(4, 6, 8), labels = c("4cyl", "6cyl", "8cyl"))
