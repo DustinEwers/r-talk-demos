@@ -39,5 +39,5 @@ model_fit = lm(mtcars$mpg ~ mtcars$hp) #build a fitted linear model
 
 summary(model_fit)
 
-plot(mtcars$hp, mtcars$mpg)
+plot(mtcars$hp, mtcars$mpg, ylim = c(0, 40))
 abline(model_fit) #adds a line to the plot
